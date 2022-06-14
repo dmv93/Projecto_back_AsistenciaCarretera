@@ -6,9 +6,9 @@ const facturaSchema = new Schema({
   apellidos: String,
   cif: String,
   direccion: String,
-  fecha: Date,
-  trabajorealizado: Boolean,
-  importe: Number,
+  fecha: String,
+  trabajorealizado: String,
+  importe: String,
   numerofactura: String,
 });
 // El modelo
