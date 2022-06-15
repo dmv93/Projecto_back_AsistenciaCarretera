@@ -9,13 +9,21 @@ router.get('/', (req, res) => {
   res.render('../views/pages/index');
 });
 router.get('/registro', (req, res) => {
-  res.render('../views/pages/registro');
+  Factura.find({}).then((factura) => {
+    let factu = Object.assign({}, factura);
+
+    res.render('../views/pages/registro', { clave: factu });
+  });
 });
 router.get('/login', (req, res) => {
   res.render('../views/pages/login');
 });
 router.get('/nosotros', (req, res) => {
   res.render('../views/pages/nosotros');
+});
+
+router.get('/contacto', (req, res) => {
+  res.render('../views/pages/contacto');
 });
 
 router.get('/factura', (request, response) => {
