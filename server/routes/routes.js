@@ -6,7 +6,16 @@ const Flota = require('../models/Flota');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('Bievenido a mi app');
+  res.render('../views/pages/index');
+});
+router.get('/registro', (req, res) => {
+  res.render('../views/pages/registro');
+});
+router.get('/login', (req, res) => {
+  res.render('../views/pages/login');
+});
+router.get('/nosotros', (req, res) => {
+  res.render('../views/pages/nosotros');
 });
 
 router.get('/factura', (request, response) => {
