@@ -1,23 +1,29 @@
-<form class="me-5">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="exampleInputEmail1"
-      aria-describedby="emailHelp"
-    />
-    <div id="emailHelp" class="form-text">
-      We'll never share your email with anyone else.
-    </div>
+<form>
+<div class="row g-3">
+  <div class="col mt-5">
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" />
+  <div class="col mt-5">
+    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  
+</div>
+<div class="row g-3">
+  <div class="col mt-5">
+    <input type="text" class="form-control" placeholder="Teléfono" aria-label="Telefono">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="col mt-5">
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Correo">
+  </div>
+
+  <div class="form-floating mt-5">
+    <textarea class="form-control" placeholder="Consúltanos" id="floatingTextarea2" style="height: 200px"></textarea>
+    <label for="floatingTextarea2">Consulta</label>
+  </div>
+    <div class="col text-center mt-5">
+      <button class="btn btn-primary regular-button"> Enviar </button>
+    </div>	
+  
+</div>
+
 </form>
