@@ -5,8 +5,22 @@
   </head>
   <body>
     <%- include('../partials/navbar'); %>
-    <div class="container"><h1>Registro</h1></div>
-    <% clave %>
+    <div class="container">
+      <h1>Registro</h1>
+      <% for(let key in fact) { %>
+      <!-- <h3><%= fact[key].nombre %></h3> -->
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><%= fact[key].nombre %></td>
+            <td><%= fact[key].apellidos %></td>
+            <td><%= fact[key].cif %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+
     <footer class="bg-primary mt-5 fixed-bottom container-fluid">
       <%- include('../partials/footer'); %>
     </footer>
