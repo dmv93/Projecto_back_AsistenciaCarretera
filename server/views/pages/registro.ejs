@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body>
-    <%- include('../partials/navbar'); %>
-    <div class="container"><h1>Registro</h1></div>
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+  <%- include('../partials/navbar'); %>
     <% clave %>
-    <footer class="bg-primary mt-5 fixed-bottom container-fluid">
-      <%- include('../partials/footer'); %>
-    </footer>
-  </body>
+      <form class="d-flex flex-column" action="/form" method="post">
+        <div class="d-flex">
+        <div class="d-flex flex-column w-50 m-4">
+          <h3><u>Datos personales</u></h3>
+            <div class="d-flex flex-column w-50">
+              <label for="nombreRegistro" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombreRegistro" name="nombreRegistro"/>
+            </div>
+            <div class="d-flex flex-column w-50">
+              <label for="apellidosRegistro" class="form-label">Apellidos</label>
+              <input type="text" class="form-control" id="apellidosRegistro" name="apellidosRegistro"/>
+            </div>
+            <div class="d-flex flex-column w-50">
+              <label for="dniRegistro" class="form-label">DNI</label>
+              <input type="text" class="form-control" id="dniRegistro" name="dniRegistro"/>
+            </div>
+            <div class="d-flex flex-column w-50">
+              <label for="telefonoRegistro" class="form-label">Teléfono</label>
+              <input type="tel" class="form-control" id="telefonoRegistro" name="telefonoRegistro"/>
+            </div>
+            <div class="d-flex flex-column w-50">
+              <label for="mailRegistro" class="form-label">Email</label>
+              <input type="email" class="form-control" id="mailRegistro" name="mailRegistro"/>
+            </div>
+        </div>
+        <div class="d-flex flex-column w-50 m-4">
+          <h3><u>Datos de vehículo</u></h3>
+            <div class="w-50">
+              <label for="matriculaRegistro" class="form-label">Matrícula</label>
+              <input type="text" class="form-control" id="matriculaRegistro" name="matriculaRegistro"/>
+            </div>
+            <div class="w-50">
+              <label for="marcaRegistro" class="form-label">Marca</label>
+              <input type="text" class="form-control" id="marcaRegistro" name="marcaRegistro"/>
+            </div>
+            <div class="w-50">
+              <label for="modeloRegistro" class="form-label">Modelo</label>
+              <input type="text" class="form-control" id="modeloRegistro" name="modeloRegistro"/>
+            </div>
+            <div class="w-50">
+              <label for="fechaRegistro" class="form-label">Año</label>
+              <input type="text" class="form-control" id="fechaRegistro" name="fechaRegistro"/>
+            </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm" style="width: 130px; margin-left: 40%; margin-top: 2em;">Submit</button>
+      </form>
+      <footer class="bg-primary mt-5 fixed-bottom container-fluid">
+        <%- include('../partials/footer'); %>
+      </footer>
+</body>
 </html>

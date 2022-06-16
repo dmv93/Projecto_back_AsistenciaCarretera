@@ -10,9 +10,7 @@ router.get('/', (req, res) => {
 });
 router.get('/registro', (req, res) => {
   Factura.find({}).then((factura) => {
-    let factu = Object.assign({}, factura);
-
-    res.render('../views/pages/registro', { clave: factu });
+    res.render('../views/pages/registro', { fact: factura });
   });
 });
 router.get('/login', (req, res) => {
