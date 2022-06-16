@@ -1,43 +1,22 @@
 const express = require('express');
-const Conductore = require('../models/Conductore');
-const Factura = require('../models/Factura');
-const Flota = require('../models/Flota');
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+const pagina = require('../controllers/paginas');
+const usuarios = require('../controllers/usuarios');
+const staff = require('../controllers/staff');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('../views/pages/index');
-});
-router.get('/registro', (req, res) => {
-  Factura.find({}).then((factura) => {
-    res.render('../views/pages/registro', { fact: factura });
-  });
-});
-router.get('/login', (req, res) => {
-  res.render('../views/pages/login');
-});
-router.get('/nosotros', (req, res) => {
-  res.render('../views/pages/nosotros');
-});
+router.get('/', pagina.home);
+router.get('/login', pagina.login);
+router.get('/nosotros', pagina.nosotros);
+router.get('/contacto', pagina.contacto);
 
-router.get('/contacto', (req, res) => {
-  res.render('../views/pages/contacto');
-});
-
-router.get('/factura', (request, response) => {
-  Factura.find({}).then((factura) => {
-    response.json(factura);
-  });
-});
-router.get('/conductor', (request, response) => {
-  Conductore.find({}).then((conductor) => {
-    response.json(conductor);
-  });
-});
-router.get('/flota', (request, response) => {
-  Flota.find({}).then((flota) => {
-    response.json(flota);
-  });
-});
+router.get('/registro', usuarios.registro);
+router.post('/registro', urlencodedParser, usuarios.registrodone);
+router.get('/factura', usuarios.factura);
+router.get('/conductor', staff.conductor);
+router.get('/flota', staff.flota);
 
 module.exports = router;
