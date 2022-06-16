@@ -14,18 +14,4 @@ const facturaSchema = new Schema({
 // El modelo
 const Factura = model('Factura', facturaSchema);
 
-const facture = new Factura({
-  nombre: "Anibal",
-  apellidos: "Pe",
-  cif: "b593934934",
-  direccion: "calle habana",
-  fecha: "1991/01/01",
-  trabajorealizado: "pinchazo",
-  importe: "50",
-  numerofactura: "1",
-})
-
-
-facture.save()
 module.exports = Factura;
-
