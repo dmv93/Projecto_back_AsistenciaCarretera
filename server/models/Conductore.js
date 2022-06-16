@@ -10,4 +10,11 @@ const conductoreSchema = new Schema({
 // El modelo
 const Conductore = model('Conductore', conductoreSchema);
 
+// const conductor = Conductore({
+//   nombre: 'Isacc',
+//   apellidos: 'Ortega',
+//   telefono: '1234567',
+//   id_conductor: '65rt',
+// });
+//conductor.save();
 module.exports = Conductore;
