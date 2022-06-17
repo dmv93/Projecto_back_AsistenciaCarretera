@@ -12,5 +12,8 @@ const paginas = {
   contacto: (req, res) => {
     res.render('../views/pages/contacto');
   },
+  solicitud: (req, res) => {
+    res.render('../views/pages/solicitud');
+  },
 };
 module.exports = paginas;
