@@ -14,6 +14,10 @@ const paginas = {
   },
   coche: (req, res) => {
     res.render('../views/pages/coche')
-  }
+  },
+  solicitud: (req, res) => {
+    res.render('../views/pages/solicitud');
+  },
+
 };
 module.exports = paginas;
