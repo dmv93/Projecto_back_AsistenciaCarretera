@@ -19,30 +19,12 @@
             />
           </div>
           <div class="d-flex flex-column w-50">
-            <label for="apellidosRegistro" class="form-label">Apellidos</label>
-            <input
-              type="text"
-              class="form-control"
-              id="apellidosRegistro"
-              name="apellidosRegistro"
-            />
-          </div>
-          <div class="d-flex flex-column w-50">
             <label for="dniRegistro" class="form-label">DNI</label>
             <input
               type="text"
               class="form-control"
               id="dniRegistro"
               name="dniRegistro"
-            />
-          </div>
-          <div class="d-flex flex-column w-50">
-            <label for="telefonoRegistro" class="form-label">Teléfono</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="telefonoRegistro"
-              name="telefonoRegistro"
             />
           </div>
           <div class="d-flex flex-column w-50">
@@ -54,44 +36,44 @@
               name="mailRegistro"
             />
           </div>
+          <div class="d-flex flex-column w-50">
+            <label for="passRegistro" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passRegistro"
+              name="passRegistro"
+            />
+          </div>
         </div>
         <div class="d-flex flex-column w-50 m-4">
-          <h3><u>Datos de vehículo</u></h3>
-          <div class="w-50">
-            <label for="matriculaRegistro" class="form-label">Matrícula</label>
+          <br>
+          <div class="d-flex flex-column w-50 mt-3">
+            <label for="apellidosRegistro" class="form-label">Apellidos</label>
             <input
               type="text"
               class="form-control"
-              id="matriculaRegistro"
-              name="matriculaRegistro"
+              id="apellidosRegistro"
+              name="apellidosRegistro"
             />
           </div>
-          <div class="w-50">
-            <label for="marcaRegistro" class="form-label">Marca</label>
+          <div class="d-flex flex-column w-50">
+            <label for="telefonoRegistro" class="form-label">Teléfono</label>
             <input
-              type="text"
+              type="tel"
               class="form-control"
-              id="marcaRegistro"
-              name="marcaRegistro"
+              id="telefonoRegistro"
+              name="telefonoRegistro"
             />
           </div>
-          <div class="w-50">
-            <label for="modeloRegistro" class="form-label">Modelo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="modeloRegistro"
-              name="modeloRegistro"
-            />
-          </div>
-          <div class="w-50">
-            <label for="fechaRegistro" class="form-label">Año</label>
-            <input
-              type="text"
-              class="form-control"
-              id="fechaRegistro"
-              name="fechaRegistro"
-            />
+          <div class="w-50 mt-2">
+            <label for="pagoRegistro" class="form-label">Datos de pago</label>
+            <br>
+            <select name="combo">
+              <!-- Opciones de la lista -->
+              <option value="1" selected>Tarjeta de crédito</option>
+              <option value="2" >Tarjeta de débito</option>
+            </select>
           </div>
         </div>
       </div>
