@@ -12,7 +12,8 @@ router.get('/', pagina.home);
 router.get('/login', pagina.login);
 router.get('/nosotros', pagina.nosotros);
 router.get('/contacto', pagina.contacto);
-
+router.get('/coche', pagina.coche)
+router.get('/solicitud', pagina.solicitud);
 router.get('/registro', usuarios.registro);
 router.post('/registro', urlencodedParser, usuarios.registrodone);
 router.get('/factura', usuarios.factura);

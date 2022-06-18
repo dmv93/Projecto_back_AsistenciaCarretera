@@ -12,5 +12,12 @@ const paginas = {
   contacto: (req, res) => {
     res.render('../views/pages/contacto');
   },
+  coche: (req, res) => {
+    res.render('../views/pages/coche')
+  },
+  solicitud: (req, res) => {
+    res.render('../views/pages/solicitud');
+  },
+
 };
 module.exports = paginas;
