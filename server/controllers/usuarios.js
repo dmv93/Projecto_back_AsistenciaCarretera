@@ -10,14 +10,19 @@ const usuarios = {
     res.render('../views/pages/registro');
   },
   registrodone: async (req, res) => {
-    const passwordHash = await encrypt(mailRegistro);
     const {
       dniRegistro,
       nombreRegistro,
       apellidosRegistro,
       telefonoRegistro,
       mailRegistro,
+      passRegistro,
+      matriculaRegistro,
+      marcaRegistro,
+      modeloRegistro,
+      fechaRegistro,
     } = req.body;
+    const passwordHash = await encrypt(passRegistro);
     var dni = false;
     var numero = dniRegistro.slice(0, dniRegistro.length - 1);
     var letra_dni = dniRegistro[8].toUpperCase();
@@ -69,6 +74,8 @@ const usuarios = {
         dni: dniRegistro,
         telefono: telefonoRegistro,
         email: mailRegistro,
+        contrasena: passwordHash,
+        rol: 'user',
       });
       console.log(usuario.toJSON().user_id);
       const car = await Coche.create({
