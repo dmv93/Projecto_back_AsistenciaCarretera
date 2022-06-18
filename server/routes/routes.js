@@ -19,5 +19,4 @@ router.post('/registro', urlencodedParser, usuarios.registrodone);
 router.get('/factura', usuarios.factura);
 router.get('/conductor', staff.conductor);
 router.get('/flota', staff.flota);
-
 module.exports = router;

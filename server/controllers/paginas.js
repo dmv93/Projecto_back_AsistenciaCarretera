@@ -2,7 +2,6 @@ const paginas = {
   home: (req, res) => {
     res.render('../views/pages/index');
   },
-
   login: (req, res) => {
     res.render('../views/pages/login');
   },
@@ -18,6 +17,9 @@ const paginas = {
   solicitud: (req, res) => {
     res.render('../views/pages/solicitud');
   },
+  tarifas: (req, res) => {
+    res.render('../views/pages/tarifas');
+  }
 
 };
 module.exports = paginas;
