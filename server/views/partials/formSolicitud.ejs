@@ -4,62 +4,66 @@
 <!---------Div que contiene los dos formularios para flexbox ------------>
 <div class="d-flex justify-content-center p-2">
 
-<div style="width: 800px; border: 1px solid #ccc; border-radius: 10px;" class="p-2">
+  <div style="width: 800px; border: 1px solid #ccc; border-radius: 10px;" class="p-2">
 
-  <form>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="inputNombre">Nombre</label>
-        <input type="nombre" class="form-control" id="inputNombre" placeholder="Nombre">
-      </div>
-      <div class="form-group ">
-        <label for="inputApellidos">Apellidos</label>
-        <input type="apellidos" class="form-control" id="inputApellidos" placeholder="Apellidos">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputNif">NIF</label>
-      <input type="Nif" class="form-control" id="inputNif" placeholder="Dirección">
-    </div>
-    <div class="form-group">
-      <label for="inputTelefono">Teléfono</label>
-      <input type="telefono" class="form-control" id="inputTelefono" placeholder="Teléfono">
-    </div>
-    <div class="form-group">
-      <label for="inputMarca">Marca</label>
-      <input type="marca" class="form-control" id="inputMarca" placeholder="Marca">
-    </div>
-    <div class="form-group">
-      <label for="inputModelo">Modelo</label>
-      <input type="modelo" class="form-control" id="inputModelo" placeholder="Modelo">
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="inputDireccion">Dirección actual del vehículo</label>
-        <input type="direccion" class="form-control" id="direccion" placeholder="Dirección">
+    <form action="/solicitud" method="post">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputNombre">Nombre</label>
+          <input type="text" name="inputNombre" class="form-control" id="inputNombre" placeholder="Nombre">
+        </div>
+        <div class="form-group ">
+          <label for="inputApellidos">Apellidos</label>
+          <input type="text" name="inputApellidos" class="form-control" id="inputApellidos" placeholder="Apellidos">
+        </div>
+        <div class="form-group ">
+          <label for="inputApellidos">Email</label>
+          <input type="email" name="inputEmail" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
       </div>
       <div class="form-group">
-        <label for="inputState">Incidencia</label>
-        <select id="inputInicidencia" class="form-control">
-          <option selected>Selecciona...</option>
-          <option>Batería</option>
-          <option>Neumático</option>
-          <option>Accidente de tráfico</option>
-          <option>Motor</option>
-          <option>Discos de arranque</option>
-          <option>Bomba de inyección</option>
-          <option>Cable de embrague</option>
-          <option>Cambio de marchas</option>
-          <option>Otras (te llamaremos)</option>
-        </select>
+        <label for="inputNif">NIF</label>
+        <input type="text" name="inputNif" class="form-control" id="inputNif" placeholder="NIF">
       </div>
-      
-    </div>
-    
-    <button type="submit" class="btn btn-primary mt-5">Enviar</button>
-    
-  </form>
-</div>
+      <div class="form-group">
+        <label for="inputTelefono">Teléfono</label>
+        <input type="text" name="inputTelefono" class="form-control" id="inputTelefono" placeholder="Teléfono">
+      </div>
+      <div class="form-group">
+        <label for="inputMarca">Marca</label>
+        <input type="text" name="inputMarca" class="form-control" id="inputMarca" placeholder="Marca">
+      </div>
+      <div class="form-group">
+        <label for="inputModelo">Modelo</label>
+        <input type="text" name="inputModelo" class="form-control" id="inputModelo" placeholder="Modelo">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputDireccion">Dirección actual del vehículo</label>
+          <input type="text" name="direccion" class="form-control" id="direccion" placeholder="Dirección">
+        </div>
+        <div class="form-group">
+          <label for="inputState">Incidencia</label>
+          <select id="inputInicidencia" name="inputInicidencia" class="form-control">
+            <option selected>Selecciona...</option>
+            <option>Batería</option>
+            <option>Neumático</option>
+            <option>Accidente de tráfico</option>
+            <option>Motor</option>
+            <option>Discos de arranque</option>
+            <option>Bomba de inyección</option>
+            <option>Cable de embrague</option>
+            <option>Cambio de marchas</option>
+            <option>Otras (te llamaremos)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-5">Enviar</button>
+
+    </form>
+  </div>
 
 
 
@@ -67,23 +71,22 @@
   <!-- Formulario para Login -->
 
 
-<div style="width: 800px; border: 1px solid #ccc; border-radius: 10px;" class="p-2"">
-  <form>
-    <div class="d-flex flex-column p-4">
-      <div class="form-group p-2">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Enter email">
-        
-      </div>
-      <div class="form-group p-2">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      
-      <button type="submit" class=" btn btn-primary mt-5" style="width: 300px ">Entrar y solicitar</button>
-    </div>
-  </form> 
+  <div style="width: 800px; border: 1px solid #ccc; border-radius: 10px;" class="p-2">
+    <form>
+      <div class="d-flex flex-column p-4">
+        <div class="form-group p-2">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
 
-</div>
+        </div>
+        <div class="form-group p-2">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
 
+        <button type="submit" class=" btn btn-primary mt-5" style="width: 300px ">Entrar y solicitar</button>
+      </div>
+    </form>
+
+  </div>
