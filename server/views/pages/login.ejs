@@ -5,26 +5,54 @@
   </head>
   <body>
     <%- include('../partials/navbar'); %>
-    <form class="d-flex flex-column" action="/login"style="align-items: center;" method="get">
-      <div class="mt-5">
-        <h3><u>Iniciar sesión</u></h3>
-      </div>
-      <div class="mt-5 w-50">
-        <div class="d-flex" style="justify-content: space-around">
-          <label for="usuarioLogin" class="form-label">Usuario</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <div
+          class="card text-white bg-primary position-absolute top-50 start-50 translate-middle w-50"
+        >
+          <div class="card-header">Iniciar sesión</div>
+          <div class="card-body">
+            <form
+              class="d-flex flex-column"
+              action="/login"
+              method="POST"
+              style="align-items: center"
+            >
+              <div class="mt-5 w-75">
+                <div class="d-flex" style="justify-content: space-around">
+                  <label for="usuarioLogin" class="form-label">Usuario</label>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usuarioLogin"
+                  name="usuarioLogin"
+                />
+              </div>
+              <div class="mt-5 w-75">
+                <div class="d-flex" style="justify-content: space-around">
+                  <label for="passwordLogin" class="form-label"
+                    >Contraseña</label
+                  >
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordLogin"
+                  name="passwordLogin"
+                />
+              </div>
+              <div
+                class="mt-5 w-50 d-flex"
+                style="justify-content: space-around"
+              >
+                <input type="submit" class="btn btn-light btn-lg" />
+              </div>
+            </form>
+          </div>
         </div>
-        <input type="text" class="form-control" id="usuarioLogin" name="usuarioLogin"/>
       </div>
-      <div class="mt-5 w-50">
-        <div class="d-flex" style="justify-content: space-around">
-          <label for="passwordLogin" class="form-label">Contraseña</label>
-        </div>
-        <input type="password" class="form-control" id="passwordLogin" name="passwordLogin"/>
-      </div>
-      <div class="mt-5 w-50 d-flex" style="justify-content: space-around">
-        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-      </div>
-        </form>
+    </div>
     <footer class="bg-primary mt-5 fixed-bottom container-fluid">
       <%- include('../partials/footer'); %>
     </footer>
