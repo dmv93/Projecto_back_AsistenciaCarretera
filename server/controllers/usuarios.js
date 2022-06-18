@@ -1,62 +1,111 @@
 const Factura = require('../models/Factura');
 const Usuario = require('../models/Usuario');
+
+const pdfFactura = require('../services/pdf_fact');
+const { encrypt } = require('../helpers/handleBcrypt');
 const Coche = require('../models/Coche');
-
-
 
 const usuarios = {
   registro: (req, res) => {
     res.render('../views/pages/registro');
   },
   registrodone: async (req, res) => {
+    const {
+      dniRegistro,
+      nombreRegistro,
+      apellidosRegistro,
+      telefonoRegistro,
+      mailRegistro,
+      passRegistro,
+      matriculaRegistro,
+      marcaRegistro,
+      modeloRegistro,
+      fechaRegistro,
+    } = req.body;
+    const passwordHash = await encrypt(passRegistro);
+    var dni = false;
+    var numero = dniRegistro.slice(0, dniRegistro.length - 1);
+    var letra_dni = dniRegistro[8].toUpperCase();
+    var resto = numero % 23;
+    var letras = [
+      'T',
+      'R',
+      'W',
+      'A',
+      'G',
+      'M',
+      'Y',
+      'F',
+      'P',
+      'D',
+      'X',
+      'B',
+      'N',
+      'J',
+      'Z',
+      'S',
+      'Q',
+      'V',
+      'H',
+      'L',
+      'C',
+      'K',
+      'E',
+      'T',
+    ];
+    //var encontrado = letras[resto];
+    if (letras[resto] == letra_dni) {
+      dni = true;
+    } //34567765F
 
-
-      var dni=false
-      var numero = req.body.dniRegistro.slice(0, req.body.dniRegistro.length - 1);
-      var letra_dni = req.body.dniRegistro[8].toUpperCase();
-      var resto = numero % 23;
-      var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
-      //var encontrado = letras[resto];
-      if (letras[resto] == letra_dni) {
-        dni=true
-      }//34567765F
-        
-    if ((req.body.nombreRegistro.match(/^[a-z ,.'-]+$/i))
-      && (req.body.apellidosRegistro.match(/^[a-z ,.'-]+$/i))
-      && (req.body.dniRegistro.match(/^\d{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/))
-      && (req.body.telefonoRegistro.match(/(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/))
-      && (req.body.mailRegistro.match(/^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/))
-      && dni) {
-      const anibal = await Usuario.create({
-        nombre: req.body.nombreRegistro,
-        apellido: req.body.apellidosRegistro,
-        dni: req.body.dniRegistro,
-        telefono: req.body.telefonoRegistro,
-        email: req.body.mailRegistro,
+    if (
+      nombreRegistro.match(/^[a-z ,.'-]+$/i) &&
+      apellidosRegistro.match(/^[a-z ,.'-]+$/i) &&
+      dniRegistro.match(/^\d{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/) &&
+      telefonoRegistro.match(/(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/) &&
+      mailRegistro.match(
+        /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/
+      ) &&
+      dni
+    ) {
+      const usuario = await Usuario.create({
+        nombre: nombreRegistro,
+        apellido: apellidosRegistro,
+        dni: dniRegistro,
+        telefono: telefonoRegistro,
+        email: mailRegistro,
+        contrasena: passwordHash,
+        rol: 'user',
       });
-      console.log(anibal.toJSON().user_id);
+      console.log(usuario.toJSON().user_id);
       const car = await Coche.create({
-        matricula: req.body.matriculaRegistro,
-        marca: req.body.marcaRegistro,
-        modelo: req.body.modeloRegistro,
-        fecha: req.body.fechaRegistro,
-        fk_user_id: anibal.toJSON().user_id,
+        matricula: matriculaRegistro,
+        marca: marcaRegistro,
+        modelo: modeloRegistro,
+        fecha: fechaRegistro,
+        fk_user_id: usuario.toJSON().user_id,
       });
-      console.log(anibal.toJSON());
-      console.log(car.toJSON());
+      // console.log(usuario.toJSON());
+      // console.log(car.toJSON());
       // nombre = req.body.nombreRegistro;
       // res.send(nombre);
       // sequelize.sync();
     } else {
-      console.log("Datos invalidos")
+      console.log('Datos invalidos');
     }
-
-
   },
-  factura: (request, response) => {
-    Factura.find({}).then((factura) => {
-      response.json(factura);
+  factura: (req, res) => {
+    const stream = res.writeHead(200, {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment;filename=factura.pdf',
     });
+    pdfFactura.crearPDF(
+      (elem) => stream.write(elem),
+      () => stream.end()
+    );
+    // Factura.find({}).then((factura) => {
+    //   response.json(factura);
+    // });
   },
 };
 module.exports = usuarios;

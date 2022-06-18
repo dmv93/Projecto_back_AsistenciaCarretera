@@ -28,6 +28,14 @@ const Usuario = sequelize.define('usuarios', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  contrasena: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  rol: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
   createdAt: Sequelize.DATE,
   updatedAt: Sequelize.DATE,
 });
