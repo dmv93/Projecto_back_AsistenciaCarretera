@@ -6,6 +6,7 @@ const pagina = require('../controllers/paginas');
 const usuarios = require('../controllers/usuarios');
 const staff = require('../controllers/staff');
 const auth = require('../controllers/auth');
+const grua = require('../controllers/grua');
 
 const router = express.Router();
 
@@ -21,5 +22,7 @@ router.post('/registro', urlencodedParser, usuarios.registrodone);
 router.get('/factura', usuarios.factura);
 router.get('/conductor', staff.conductor);
 router.get('/flota', staff.flota);
+router.get('/grua', grua.getGrua);
+router.post('/grua', urlencodedParser, grua.setGrua);
 
 module.exports = router;
