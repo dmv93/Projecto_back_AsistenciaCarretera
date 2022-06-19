@@ -1,7 +1,9 @@
 const express = require('express');
+const pug = require('pug');
 
 const app = express();
 
+app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
 
 app.use(express.json());

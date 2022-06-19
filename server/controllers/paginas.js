@@ -2,12 +2,11 @@ const paginas = {
   home: (req, res) => {
     res.render('../views/pages/index');
   },
-
   login: (req, res) => {
     res.render('../views/pages/login');
   },
-  nosotros: (req, res) => {
-    res.render('../views/pages/nosotros');
+  misionVision: (req, res) => {
+    res.render('../views/pages/misionVision.pug');
   },
   contacto: (req, res) => {
     res.render('../views/pages/contacto');
@@ -18,6 +17,9 @@ const paginas = {
   solicitud: (req, res) => {
     res.render('../views/pages/solicitud');
   },
+  tarifas: (req, res) => {
+    res.render('../views/pages/tarifas.pug');
+  }
 
 };
 module.exports = paginas;
