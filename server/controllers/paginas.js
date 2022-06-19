@@ -18,6 +18,10 @@ const paginas = {
   solicitud: (req, res) => {
     res.render('../views/pages/solicitud');
   },
+  nosotros2: (req, res) => {
+    res.render('../views/pages/nosotros2.pug');
+  },
+  
 
 };
 module.exports = paginas;
