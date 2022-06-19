@@ -1,9 +1,12 @@
 const express = require('express');
-const pug = require('pug');
 
+const cors = ('cors')
 const app = express();
 
+const pug = require('pug');
+
 app.set('view engine', 'pug');
+
 app.set('view engine', 'ejs');
 
 app.use(express.json());

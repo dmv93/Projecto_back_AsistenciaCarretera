@@ -20,6 +20,5 @@ const paginas = {
   tarifas: (req, res) => {
     res.render('../views/pages/tarifas.pug');
   }
-
 };
 module.exports = paginas;

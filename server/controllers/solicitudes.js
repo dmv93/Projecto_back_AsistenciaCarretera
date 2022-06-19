@@ -14,11 +14,8 @@ const solicitudes = {
             inputModelo,
             direccion,
             inputInicidencia,
-            inputEmail,
-            
+            inputEmail,    
         } = req.body;
-
-
 
         const solicitud = await Solicitud.create({
             nombre: inputNombre,
@@ -30,12 +27,11 @@ const solicitudes = {
             modelo: inputModelo,
             direccion: direccion,
             reparacion: inputInicidencia,
-            comprobacion: "0",
+            comprobacion: "pendiente",
         });
-
-
-
+    
     },
+    
 }
 
 
