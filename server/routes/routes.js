@@ -10,7 +10,6 @@ const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
 
-router.get('/nosotros2', pagina.nosotros2);
 router.get('/', pagina.home);
 router.get('/login', pagina.login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
