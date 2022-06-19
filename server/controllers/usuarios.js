@@ -27,33 +27,7 @@ const usuarios = {
     var numero = dniRegistro.slice(0, dniRegistro.length - 1);
     var letra_dni = dniRegistro[8].toUpperCase();
     var resto = numero % 23;
-    var letras = [
-      'T',
-      'R',
-      'W',
-      'A',
-      'G',
-      'M',
-      'Y',
-      'F',
-      'P',
-      'D',
-      'X',
-      'B',
-      'N',
-      'J',
-      'Z',
-      'S',
-      'Q',
-      'V',
-      'H',
-      'L',
-      'C',
-      'K',
-      'E',
-      'T',
-    ];
-    //var encontrado = letras[resto];
+    var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T',];
     if (letras[resto] == letra_dni) {
       dni = true;
     } //34567765F

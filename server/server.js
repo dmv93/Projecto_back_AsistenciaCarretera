@@ -6,7 +6,12 @@ const cors = require('cors');
 //cargar las variables entorno
 dotenv.config({ path: './config/config.env' });
 
+const cors = ('cors')
 const app = express();
+
+const pug = require('pug');
+
+app.set('view engine', 'pug');
 
 app.set('view engine', 'ejs');
 
