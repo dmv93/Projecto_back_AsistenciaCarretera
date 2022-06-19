@@ -16,11 +16,12 @@ const router = express.Router();
 router.get('/', pagina.home);
 router.get('/login', pagina.login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
-router.get('/nosotros', pagina.nosotros);
+router.get('/misionVision', pagina.misionVision);
 router.get('/contacto', pagina.contacto);
 router.get('/coche', pagina.coche);
 router.get('/solicitud', pagina.solicitud);
 router.post('/solicitud', urlencodedParser, solicitudes.solicituddone);
+router.get('/tarifas', pagina.tarifas);
 
 router.get('/registro', usuarios.registro);
 router.post('/registro', urlencodedParser, usuarios.registrodone);
