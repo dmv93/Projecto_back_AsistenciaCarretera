@@ -27,21 +27,23 @@
     <title>Agregar posición</title>
   </head>
   <body>
-    <div class="container my-3">
-      <h1 class="display-4 text-center">Agregar grua</h1>
+    <div class="container my-5 w-50">
+      <div class="bg-primary py-3 text-white">
+        <h1 class="display-4 text-center">AGREGAR GRÚA</h1>
+      </div>
+      <form id="grua-form" class="mb-4">
+        <div class="form-group my-2">
+          <label for="grua-id">Grúa Id</label>
+          <input type="text" id="grua-id" class="form-control my-2" />
+        </div>
+        <div class="form-group my-2">
+          <label for="grua-address">Dirección Grúa</label>
+          <input type="text" id="grua-address" class="form-control my-2" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+        <a href="mapa.html" class="btn btn-secondary mt-3">Regresar</a>
+      </form>
     </div>
-    <form id="grua-form" class="mb-4">
-      <div class="form-group">
-        <label for="grua-id">Grua Id</label>
-        <input type="text" id="grua-id" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="grua-address">Dirección Grúa</label>
-        <input type="text" id="grua-address" class="form-control" />
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-      <a href="mapa.html" class="btn btn-secondary">Regresar</a>
-    </form>
     <script src="./js/agregar.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
