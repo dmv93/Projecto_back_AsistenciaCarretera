@@ -4,15 +4,17 @@
     <%- include('../partials/head'); %>
   </head>
   <body>
-    <%- include('../partials/navbar'); %>
+    <div><%- include('../partials/navbar'); %></div>
     <div class="container">
       <div class="d-flex">
         <div><%- include('../partials/mision'); %></div>
       </div>
-      <div class="mt-3"><%- include('../partials/botones'); %></div>
+      <div class="my-5"><%- include('../partials/botones'); %></div>
     </div>
-    <footer class="bg-primary mt-5 fixed-bottom container-fluid">
-      <%- include('../partials/footer'); %>
-    </footer>
+    <div>
+      <footer class="bg-primary mt-5">
+        <%- include('../partials/footer'); %>
+      </footer>
+    </div>
   </body>
 </html>
