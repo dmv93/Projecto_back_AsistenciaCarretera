@@ -8,7 +8,7 @@ const auth = require('../controllers/auth');
 const grua = require('../controllers/grua');
 
 const solicitudes = require('../controllers/solicitudes');
-const verSolicitudes = require('../controllers/dashAdmin');
+//const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
 
@@ -20,7 +20,7 @@ router.get('/contacto', pagina.contacto);
 router.get('/coche', pagina.coche);
 router.get('/solicitud', solicitudes.solicitudes);
 router.post('/solicitud', urlencodedParser, solicitudes.solicituddone);
-router.get('/dashAdmin', verSolicitudes.verSolicitudes);
+router.get('/dashAdmin', solicitudes.verSolicitudes);
 router.get('/tarifas', pagina.tarifas);
 router.get('/registro', usuarios.registro);
 router.post('/registro', urlencodedParser, usuarios.registrodone);
@@ -29,6 +29,6 @@ router.get('/conductor', staff.conductor);
 router.get('/flota', staff.flota);
 router.get('/grua', grua.getGrua);
 router.post('/grua', urlencodedParser, grua.setGrua);
-router.post('/dashboard', verSolicitudes.modificarEstado);
+router.post('/dashboard', solicitudes.modificarEstado);
 
 module.exports = router;
