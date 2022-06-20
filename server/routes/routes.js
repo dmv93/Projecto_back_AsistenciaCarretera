@@ -11,9 +11,9 @@ const solicitudes = require('../controllers/solicitudes');
 const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
-
-router.get('/', pagina.home);
-router.get('/login', pagina.login);
+const { home, login } = pagina;
+router.get('/', home);
+router.get('/login', login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
 router.get('/misionVision', pagina.misionVision);
 router.get('/contacto', pagina.contacto);
