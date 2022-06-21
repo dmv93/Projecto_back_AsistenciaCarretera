@@ -31,6 +31,7 @@ const solicitudes = {
     });
   },
 
+
   verSolicitudes: async (req, res) => {
     if (req.cookies.nombre == 'admin') {
       const solicitudesBBDD = await Solicitud.findAll({
@@ -52,10 +53,8 @@ const solicitudes = {
           where: {
             id_solicitud: req.body.id,
           },
-        }
-      );
+        });
       await res.send('../views/pages/dashAdmin');
-
       console.log('Hay que aceptar la solicitud');
     } else if (req.body.action == 'rechazar') {
       await Solicitud.update(

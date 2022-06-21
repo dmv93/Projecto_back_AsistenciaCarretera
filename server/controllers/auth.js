@@ -17,9 +17,9 @@ const auth = {
     const checkPassword = await compare(passwordLogin, usuario.contrasena);
 
     if (checkPassword) {
-      let guardarDatos = { id: usuario.user_id, rol: usuario.rol };
-      console.log(guardarDatos.id);
-      console.log('contraseña correcta');
+      //let guardarDatos = { id: usuario.user_id, rol: usuario.rol };
+      //console.log(guardarDatos.id);
+      //console.log('contraseña correcta');
 
       res.cookie('nombre', `${usuario.rol}`);
       if (usuario.rol == 'admin') {

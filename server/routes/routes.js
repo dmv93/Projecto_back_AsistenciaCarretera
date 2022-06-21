@@ -11,12 +11,11 @@ const solicitudes = require('../controllers/solicitudes');
 //const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
-
 const { home, login, misionVision, contacto, coche, tarifas } = pagina;
-
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
 const { getGrua, setGrua } = grua;
+
 router.get('/', home);
 router.get('/login', login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
