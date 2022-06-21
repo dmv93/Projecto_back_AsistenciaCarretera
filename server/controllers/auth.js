@@ -19,7 +19,11 @@ const auth = {
     
 
     if (checkPassword) {
+      let guardarDatos = {id: usuario.user_id, rol: usuario.rol}
+      console.log(guardarDatos.id);
       console.log('contraseña correcta');
+      res.render('../views/pages/index',{datosGuardados: guardarDatos})//,{datosGuardados: guardarDatos}
+      //res.redirect('/')
       
 
     } else {

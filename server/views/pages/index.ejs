@@ -3,6 +3,17 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
+  <% if (datosGuardados != null) { %>
+      <% if (datosGuardados.rol == "admin") { %>
+        <script>
+        console.log('<%=datosGuardados.rol%>')
+        localStorage.setItem("login", JSON.stringify({
+                rol: '<%=datosGuardados.rol%>',
+                user_id: '<%=datosGuardados.id%>'
+            }));
+      </script>
+        <% }  %>
+  <% }  %>
   <body>
     <div><%- include('../partials/navbar'); %></div>
     <div class="container">

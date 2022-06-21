@@ -36,10 +36,11 @@ const solicitudes = {
             where: { comprobacion: "pendiente" },
         });
 
-        //console.log(solicitudesBBDD)
+        console.log(solicitudesBBDD)
         res.render('../views/pages/dashAdmin', { solic: solicitudesBBDD });
     },
     modificarEstado: async (req, res) => {
+        console.log(req)
         if (req.body.action == "aceptar") {
 
             await Solicitud.update({ comprobacion: "aceptada" }, {
