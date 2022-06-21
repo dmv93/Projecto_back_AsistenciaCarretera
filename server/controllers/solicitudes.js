@@ -30,14 +30,20 @@ const solicitudes = {
       comprobacion: 'pendiente',
     });
   },
-  verSolicitudes: async (req, res) => {
-    const solicitudesBBDD = await Solicitud.findAll({
-      where: { comprobacion: 'pendiente' },
-    });
 
-    //console.log(solicitudesBBDD)
-    res.render('../views/pages/dashAdmin', { solic: solicitudesBBDD });
+  verSolicitudes: async (req, res) => {
+    if (req.cookies.nombre == 'admin') {
+      const solicitudesBBDD = await Solicitud.findAll({
+        where: { comprobacion: 'pendiente' },
+      });
+      //console.log(solicitudesBBDD)
+      res.render('../views/pages/dashAdmin', { solic: solicitudesBBDD });
+    } else {
+      res.status(403);
+      res.render('../views/pages/403');
+    }
   },
+
   modificarEstado: async (req, res) => {
     if (req.body.action == 'aceptar') {
       await Solicitud.update(
