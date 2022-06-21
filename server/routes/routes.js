@@ -11,24 +11,29 @@ const solicitudes = require('../controllers/solicitudes');
 const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
-const { home, login } = pagina;
+
+const { home, login, misionVision, contacto, coche, tarifas } = pagina;
+
+const { registro, registrodone, factura } = usuarios;
+const { conductor, flota } = staff;
+const { getGrua, setGrua } = grua;
 router.get('/', home);
 router.get('/login', login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
-router.get('/misionVision', pagina.misionVision);
-router.get('/contacto', pagina.contacto);
-router.get('/coche', pagina.coche);
+router.get('/misionVision', misionVision);
+router.get('/contacto', contacto);
+router.get('/coche', coche);
 router.get('/solicitud', solicitudes.solicitudes);
 router.post('/solicitud', urlencodedParser, solicitudes.solicituddone);
 router.get('/dashAdmin', verSolicitudes.verSolicitudes);
-router.get('/tarifas', pagina.tarifas);
-router.get('/registro', usuarios.registro);
-router.post('/registro', urlencodedParser, usuarios.registrodone);
-router.get('/factura', usuarios.factura);
-router.get('/conductor', staff.conductor);
-router.get('/flota', staff.flota);
-router.get('/grua', grua.getGrua);
-router.post('/grua', urlencodedParser, grua.setGrua);
+router.get('/tarifas', tarifas);
+router.get('/registro', registro);
+router.post('/registro', urlencodedParser, registrodone);
+router.get('/factura', factura);
+router.get('/conductor', conductor);
+router.get('/flota', flota);
+router.get('/grua', getGrua);
+router.post('/grua', urlencodedParser, setGrua);
 router.post('/dashboard', verSolicitudes.modificarEstado);
 
 module.exports = router;
