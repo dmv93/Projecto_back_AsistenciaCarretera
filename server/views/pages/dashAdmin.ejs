@@ -8,7 +8,7 @@
     <%- include('../partials/navbar'); %>
         <div>
             <h3 class="d-flex flex-column container-fluid">Administrar solicitudes</h3>
-                <div action="">
+            <div action="">
                 <div class="d-flex flex-column container-fluid"  >
                 <% for(let key in solic) { %>
                     <div class="d-flex border border-secondary mb-2"  >
@@ -29,41 +29,8 @@
                     <% } %>
                 </div>
             </div>
-            <div style="padding: 0.5rem; width: 7%">
-              <p><%= solic[key].marca %></p>
-            </div>
-            <div style="padding: 0.5rem; width: 6%">
-              <p><%= solic[key].modelo %></p>
-            </div>
-            <div style="padding: 0.5rem; width: 13%">
-              <p><%= solic[key].reparacion %></p>
-            </div>
-            <div style="padding: 0.5rem; width: 6%">
-              <button
-                type="submit"
-                class="btn btn-success"
-                id="<%= solic[key].id_solicitud %>"
-                name="aceptar"
-              >
-                Aceptar
-              </button>
-            </div>
-            <div style="padding: 0.5rem; width: 6%">
-              <button
-                type="submin"
-                class="btn btn-danger"
-                id="<%= solic[key].id_solicitud %>"
-                name="rechazar"
-              >
-                Rechazar
-              </button>
-            </div>
-          </div>
-
-          <% } %>
         </div>
-      </div>
-    </div>
+ 
     <footer class="bg-primary mt-5 fixed-bottom container-fluid">
       <%- include('../partials/footer'); %>
     </footer>
