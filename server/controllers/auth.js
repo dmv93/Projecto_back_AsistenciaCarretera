@@ -31,7 +31,7 @@ const auth = {
         res.render('../views/pages/403');
       }
 
-      res.render('../views/pages/index', { datosGuardados: guardarDatos }); //,{datosGuardados: guardarDatos}
+      res.render('../views/pages/index'); //,{datosGuardados: guardarDatos}
       //res.redirect('/')
     } else {
       console.log('contraseña incorrecta');
