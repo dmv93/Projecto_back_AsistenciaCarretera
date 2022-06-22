@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Coche</title>
+</head>
+<body>
+  <div><% if (datosGuardados == "none") { %>
+    <%- include('../partials/navbar'); %>
+    <% }  %></div>
+  <div><% if (datosGuardados == "admin") { %>
+    <%- include('../partials/navbarAdmin'); %>
+    <% }  %></div>
+  <div><% if (datosGuardados == "user") { %>
+    <%- include('../partials/navbarUser'); %>
+    <% }  %></div>
+    <div class="d-flex flex-column w-50 m-4">
+        <h3><u>Datos de vehículo</u></h3>
+        <div class="w-50">
+          <label for="matriculaRegistro" class="form-label">Matrícula</label>
+          <input
+            type="text"
+            class="form-control"
+            id="matriculaRegistro"
+            name="matriculaRegistro"
+          />
+        </div>
+        <div class="w-50">
+          <label for="marcaRegistro" class="form-label">Marca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="marcaRegistro"
+            name="marcaRegistro"
+          />
+        </div>
+        <div class="w-50">
+          <label for="modeloRegistro" class="form-label">Modelo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="modeloRegistro"
+            name="modeloRegistro"
+          />
+        </div>
+        <div class="w-50">
+          <label for="fechaRegistro" class="form-label">Año</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fechaRegistro"
+            name="fechaRegistro"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary btn-sm"
+      style="width: 130px; margin-left: 40%; margin-top: 2em"
+    >
+      Submit
+    </button>
+        <footer class="bg-primary mt-5 fixed-bottom container-fluid">
+      <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

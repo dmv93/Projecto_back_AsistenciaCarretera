@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <div>
+        <% if (datosGuardados=="none" ) { %>
+            <%- include('../partials/navbar'); %>
+                <% } %>
+    </div>
+    <div>
+        <% if (datosGuardados=="admin" ) { %>
+            <%- include('../partials/navbarAdmin'); %>
+                <% } %>
+    </div>
+    <div>
+        <% if (datosGuardados=="user" ) { %>
+            <%- include('../partials/navbarUser'); %>
+                <% } %>
+    </div>
+    <footer>
+        <footer class="bg-primary mt-5 fixed-bottom container-fluid">
+            <%- include('../partials/footer'); %>
+        </footer>
+</body>
+
+</html>

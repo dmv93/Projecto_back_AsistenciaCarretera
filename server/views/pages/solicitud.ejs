@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../partials/head'); %>
+    <title>Solicitud</title>
+  </head>
+  <body>
+    <div><% if (datosGuardados == "none") { %>
+      <%- include('../partials/navbar'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
+    <div class="container text-center text-primary my-2">
+      <h1>Solicitud</h1>
+      <div><%- include('../partials/formSolicitud'); %></div>
+    </div>
+
+    <footer class="bg-primary mt-5">
+      <%- include('../partials/footer'); %>
+    </footer>
+  </body>
+</html>

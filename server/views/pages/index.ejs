@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    
+      <%- include('../partials/head'); %>
+
+      
+    
+    <title>Asistencia en carretera</title>
+  </head>
+  <body>
+    <div><% if (datosGuardados == "none") { %>
+      <%- include('../partials/navbar'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
+      
+      
+      
+    <div class="container">
+      <div class="d-flex">
+        <div><%- include('../partials/mision'); %></div>
+      </div>
+      <div class="my-5"><%- include('../partials/botones'); %></div>
+    </div>
+    <div>
+      <footer class="bg-primary mt-5">
+        <%- include('../partials/footer'); %>
+      </footer>
+    </div>
+  </body>
+</html>
