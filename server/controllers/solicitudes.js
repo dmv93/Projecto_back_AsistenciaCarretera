@@ -1,5 +1,5 @@
 const Solicitud = require('../models/Solicitud');
-
+const Grua = require('../models/Grua');
 const solicitudes = {
     solicitu: async (req, res) => {
         let guardarDatos = await req.cookies.nombre;
@@ -49,7 +49,7 @@ const solicitudes = {
             reparacion: inputInicidencia,
             comprobacion: "pendiente",
         });
-        
+        res.render('../views/pages/solicitud');
         
       } else {
         console.log('Datos invalidos');
@@ -98,6 +98,7 @@ const solicitudes = {
             await res.send('../views/pages/dashAdmin');
             console.log("Hay que rechazar la solicitud")
         }º
+
 
 
 
