@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../partials/head'); %>
+    
+      <%- include('../partials/head'); %>
+
+      
+    
     <title>Asistencia en carretera</title>
   </head>
-
   <body>
-    <div><%- include('../partials/navbar'); %></div>
+    <div><% if (datosGuardados == "none") { %>
+      <%- include('../partials/navbar'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
+      
+      
+      
     <div class="container">
       <div class="d-flex">
         <div><%- include('../partials/mision'); %></div>

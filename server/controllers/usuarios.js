@@ -89,6 +89,7 @@ const usuarios = {
       // nombre = req.body.nombreRegistro;
       // res.send(nombre);
       // sequelize.sync();
+      res.render('../views/pages/login');
     } else {
       console.log('Datos invalidos');
     }
@@ -96,10 +97,9 @@ const usuarios = {
   },
   factura: async (req, res) => {
     const usuario = await Usuario.findOne({
-      where: { nombre: req.cookies.nombreusuario },
+      where: { nombre: req.cookies.nombreUsuario },
     });
 
-    console.log(req.cookies.nombreusuario);
     const stream = res.writeHead(200, {
       'Content-Type': 'application/pdf',
       'Content-Disposition': 'attachment;filename=factura.pdf',

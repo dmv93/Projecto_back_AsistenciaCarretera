@@ -12,20 +12,25 @@ const solicitudes = require('../controllers/solicitudes');
 
 const router = express.Router();
 
-const { home, login, misionVision, contacto, coche, tarifas, mapa } = pagina;
+const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa } = pagina;
 
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
 const { getGrua, setGrua } = grua;
+const { solicituddone, verSolicitudes, modificarEstado } = solicitudes;
+
 router.get('/', home);
 router.get('/login', login);
 router.post('/login', urlencodedParser, auth.loginCtrl);
 router.get('/misionVision', misionVision);
 router.get('/contacto', contacto);
 router.get('/coche', coche);
+
+router.get('/solicitud', solicitud);
+router.post('/solicitud', urlencodedParser,solicituddone);
+
 router.get('/mapa', mapa);
-router.get('/solicitud', solicitudes.solicitudes);
-router.post('/solicitud', urlencodedParser, solicitudes.solicituddone);
+
 router.get('/tarifas', tarifas);
 router.get('/registro', registro);
 router.post('/registro', urlencodedParser, registrodone);
@@ -34,7 +39,8 @@ router.get('/conductor', conductor);
 router.get('/flota', flota);
 router.get('/grua', getGrua);
 router.post('/grua', urlencodedParser, setGrua);
-router.get('/dashAdmin', solicitudes.verSolicitudes);
-router.post('/dashboard', solicitudes.modificarEstado);
+router.get('/dashAdmin', verSolicitudes);
+router.post('/dashboard', modificarEstado);
+router.get('/logOut', auth.logOut);
 
 module.exports = router;

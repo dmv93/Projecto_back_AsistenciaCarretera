@@ -12,13 +12,23 @@
     <title>Solicitud</title>
   </head>
   <body>
-    <div><%- include('../partials/navbar'); %></div>
+
+<div><% if (datosGuardados == "none") { %>
+  <%- include('../partials/navbar'); %>
+  <% }  %></div>
+<div><% if (datosGuardados == "admin") { %>
+  <%- include('../partials/navbarAdmin'); %>
+  <% }  %></div>
+<div><% if (datosGuardados == "user") { %>
+  <%- include('../partials/navbarUser'); %>
+  <% }  %></div>
     <div class="container d-flex">
       <div class="container text-center text-primary my-2 min-vw-50">
         <h1>Solicitud</h1>
         <div><%- include('../partials/formSolicitud'); %></div>
       </div>
       <div id="map_template" class="container-sm mt-5 min-vw-50"></div>
+
     </div>
     <script
       src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
