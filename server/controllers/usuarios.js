@@ -27,7 +27,32 @@ const usuarios = {
     var numero = dniRegistro.slice(0, dniRegistro.length - 1);
     var letra_dni = dniRegistro[8].toUpperCase();
     var resto = numero % 23;
-    var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T',];
+    var letras = [
+      'T',
+      'R',
+      'W',
+      'A',
+      'G',
+      'M',
+      'Y',
+      'F',
+      'P',
+      'D',
+      'X',
+      'B',
+      'N',
+      'J',
+      'Z',
+      'S',
+      'Q',
+      'V',
+      'H',
+      'L',
+      'C',
+      'K',
+      'E',
+      'T',
+    ];
     if (letras[resto] == letra_dni) {
       dni = true;
     } //34567765F
@@ -67,19 +92,24 @@ const usuarios = {
     } else {
       console.log('Datos invalidos');
     }
+    res.render('../views/pages/registro');
   },
-  factura: (req, res) => {
+  factura: async (req, res) => {
+    const usuario = await Usuario.findOne({
+      where: { nombre: req.cookies.nombreusuario },
+    });
+
+    console.log(req.cookies.nombreusuario);
     const stream = res.writeHead(200, {
       'Content-Type': 'application/pdf',
       'Content-Disposition': 'attachment;filename=factura.pdf',
     });
     pdfFactura.crearPDF(
       (elem) => stream.write(elem),
-      () => stream.end()
+      () => stream.end(),
+      `${usuario.nombre} ${usuario.apellido} con Dni: ${usuario.dni}`,
+      '85'
     );
-    // Factura.find({}).then((factura) => {
-    //   response.json(factura);
-    // });
   },
 };
 module.exports = usuarios;

@@ -1,21 +1,21 @@
 PDFDocument = require('pdfkit');
 
-function crearPDF(dataCallback, endCallback) {
-  const nombre = 'Davinia de la Rosa';
-  const concepto = 'Servicio de grúa desde punto A hasta punto B';
-  const precio = '350';
-  const iva = '70';
+function crearPDF(dataCallback, endCallback, nombreC, precioP) {
+  const nombre = nombreC;
+  const concepto = 'Servicio grúa portacoches - retirada del coche';
+  const precio = precioP;
 
   const doc = new PDFDocument({ size: 'A4' });
   doc.on('data', dataCallback);
   doc.on('end', endCallback);
-  doc.image('./public/img/logo.png', 430, 15, {
+  doc.image('./public/img/logo2.png', 430, 15, {
     fit: [100, 100],
     align: 'center',
     valign: 'center',
   });
-
-  doc.fontSize(20).fillColor('blue').text(`${nombre}`, {
+  doc.moveDown();
+  doc.moveDown();
+  doc.fontSize(18).fillColor('blue').text(`${nombre}`, {
     align: 'center',
   });
   doc.moveDown();
@@ -23,7 +23,7 @@ function crearPDF(dataCallback, endCallback) {
     align: 'left',
   });
   doc.moveDown();
-  doc.fontSize(14).fillColor('red').text(`Precio: ${precio}€ - IVA: ${iva}€`, {
+  doc.fontSize(14).fillColor('red').text(`Precio: ${precio}€ `, {
     align: 'center',
   });
   doc.moveDown();

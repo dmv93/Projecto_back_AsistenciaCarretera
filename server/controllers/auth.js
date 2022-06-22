@@ -23,9 +23,13 @@ const auth = {
 
       res.cookie('nombre', `${usuario.rol}`);
       res.cookie('nombreusuario', `${usuario.nombre}`);
+
       if (usuario.rol == 'admin') {
         next();
         console.log('Eres admin');
+      } else if (usuario.rol == 'user') {
+        next();
+        console.log('Eres user');
       } else {
         res.status(403);
         // res.send({ error: 'No autorizado' });
