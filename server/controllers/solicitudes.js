@@ -49,7 +49,11 @@ const solicitudes = {
             reparacion: inputInicidencia,
             comprobacion: "pendiente",
         });
-        res.render('../views/pages/solicitud');
+
+        let guardarDatos = await req.cookies.nombre;
+    res.render('../views/pages/index', {datosGuardados: guardarDatos});
+
+    
         
       } else {
         console.log('Datos invalidos');
