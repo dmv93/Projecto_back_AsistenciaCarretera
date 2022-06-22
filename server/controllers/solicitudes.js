@@ -55,13 +55,6 @@ const solicitudes = {
         console.log('Datos invalidos');
       }
 
-
-
-
-
-
-        
-    
     },
     verSolicitudes: async (req, res) => {
         if (req.cookies.nombre == 'admin') {
@@ -97,11 +90,8 @@ const solicitudes = {
             });
             await res.send('../views/pages/dashAdmin');
             console.log("Hay que rechazar la solicitud")
-        }º
-
-
-
-    }
+        }
+    },
     
 }
 
