@@ -28,5 +28,9 @@ const paginas = {
   tarifas: (req, res) => {
     res.render('../views/pages/tarifas.pug');
   },
+  gracias: async (req, res) => {
+    let guardarDatos = await req.cookies.nombre;
+    res.render('../views/pages/gracias', {datosGuardados: guardarDatos});
+  },
 };
 module.exports = paginas;

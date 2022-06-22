@@ -49,7 +49,7 @@ const solicitudes = {
             reparacion: inputInicidencia,
             comprobacion: "pendiente",
         });
-        
+        res.render('../views/pages/gracias')
         
       } else {
         console.log('Datos invalidos');

@@ -11,7 +11,7 @@ const solicitudes = require('../controllers/solicitudes');
 //const verSolicitudes = require('../controllers/dashAdmin');
 
 const router = express.Router();
-const { home, login, misionVision, contacto, coche, tarifas, solicitud } = pagina;
+const { home, login, misionVision, contacto, coche, tarifas, solicitud, gracias } = pagina;
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
 const { getGrua, setGrua } = grua;
@@ -36,5 +36,6 @@ router.post('/grua', urlencodedParser, setGrua);
 router.get('/dashAdmin', verSolicitudes);
 router.post('/dashboard', modificarEstado);
 router.get('/logOut', auth.logOut);
+router.post('/gracias', gracias)
 
 module.exports = router;
