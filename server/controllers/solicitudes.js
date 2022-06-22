@@ -18,6 +18,25 @@ const solicitudes = {
             inputEmail,    
         } = req.body;
 
+        var dni = false;
+    var numero = inputNif.slice(0, inputNif.length - 1);
+    var letra_dni = inputNif[8].toUpperCase();
+    var resto = numero % 23;
+    var letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T',];
+    if (letras[resto] == letra_dni) {
+      dni = true;
+    } //34567765F
+
+    if (
+        inputNombre.match(/^[a-z ,.'-]+$/i) &&
+        inputApellidos.match(/^[a-z ,.'-]+$/i) &&
+        inputNif.match(/^\d{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/) &&
+        inputTelefono.match(/(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/) &&
+        inputEmail.match(
+          /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/
+        ) &&
+        dni
+      ) {
         const solicitud = await Solicitud.create({
             nombre: inputNombre,
             apellidos: inputApellidos,
@@ -30,6 +49,18 @@ const solicitudes = {
             reparacion: inputInicidencia,
             comprobacion: "pendiente",
         });
+        
+        
+      } else {
+        console.log('Datos invalidos');
+      }
+
+
+
+
+
+
+        
     
     },
     verSolicitudes: async (req, res) => {
