@@ -12,7 +12,7 @@ const solicitudes = require('../controllers/solicitudes');
 
 const router = express.Router();
 
-const { home, login, misionVision, contacto, coche, tarifas } = pagina;
+const { home, login, misionVision, contacto, coche, tarifas, mapa } = pagina;
 
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
@@ -23,6 +23,7 @@ router.post('/login', urlencodedParser, auth.loginCtrl);
 router.get('/misionVision', misionVision);
 router.get('/contacto', contacto);
 router.get('/coche', coche);
+router.get('/mapa', mapa);
 router.get('/solicitud', solicitudes.solicitudes);
 router.post('/solicitud', urlencodedParser, solicitudes.solicituddone);
 router.get('/tarifas', tarifas);

@@ -20,5 +20,8 @@ const paginas = {
   tarifas: (req, res) => {
     res.render('../views/pages/tarifas.pug');
   },
+  mapa: (req, res) => {
+    res.render('../views/pages/mapa');
+  },
 };
 module.exports = paginas;

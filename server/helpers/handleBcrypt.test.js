@@ -1,12 +1,10 @@
 const bcrypt = require('bcryptjs');
+const textPplain = 'enanitos';
 
-const encrypt = async (textPplain) => {
-  const hash = await bcrypt.hash(textPplain, 10);
-  return hash;
-};
-
-const compare = async (passwordPlain, hashPassword) => {
-  return await bcrypt.compare(passwordPlain, hashPassword);
-};
-
-module.exports = { encrypt, compare };
+describe('pruebas unitarias con jest', () => {
+  test('Comprobar si el has es correcto', async () => {
+    await expect(bcrypt.hash(textPplain, 10)).resolves.toBe(
+      '$2a$10$X/eIlA9VpLDiUHPhixgSruvYE/U6RSRPgxar8xDqYQaGkFp9gJDE2'
+    );
+  });
+});

@@ -1,5 +1,5 @@
 const Solicitud = require('../models/Solicitud');
-
+const Grua = require('../models/Grua');
 const solicitudes = {
   solicitudes: (req, res) => {
     res.render('../views/pages/solicitud');
@@ -29,6 +29,7 @@ const solicitudes = {
       reparacion: inputInicidencia,
       comprobacion: 'pendiente',
     });
+    res.render('../views/pages/solicitud');
   },
 
   verSolicitudes: async (req, res) => {

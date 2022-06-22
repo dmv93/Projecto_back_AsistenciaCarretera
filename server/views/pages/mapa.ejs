@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <%- include('../partials/head'); %>
     <link
       rel="stylesheet"
@@ -9,26 +12,25 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="/css/main.css" />
-    <title>Solicitud</title>
+
+    <title>Mapa de asistencia DIMA</title>
   </head>
-  <body>
+  <body class="mb-2 bg-primary">
     <div><%- include('../partials/navbar'); %></div>
-    <div class="container d-flex">
-      <div class="container text-center text-primary my-2 min-vw-50">
-        <h1>Solicitud</h1>
-        <div><%- include('../partials/formSolicitud'); %></div>
-      </div>
-      <div id="map_template" class="container-sm mt-5 min-vw-50"></div>
+    <div class="container my-1">
+      <h1 class="display-5 text-center text-white">
+        <i class="fas fa-map-marked me-4 text-white"></i>UBICACIÓN GRÚAS DIMA
+      </h1>
     </div>
+
+    <div id="map_templat" class="min-vw-100 min-vh-100"></div>
+
     <script
       src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
       integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
       crossorigin=""
     ></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js"></script>
-    <footer class="bg-primary mt-5">
-      <%- include('../partials/footer'); %>
-    </footer>
+    <script src="/js/main2.js"></script>
   </body>
 </html>

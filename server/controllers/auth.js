@@ -22,6 +22,7 @@ const auth = {
       console.log('contraseña correcta');
 
       res.cookie('nombre', `${usuario.rol}`);
+      res.cookie('nombreusuario', `${usuario.nombre}`);
       if (usuario.rol == 'admin') {
         next();
         console.log('Eres admin');
