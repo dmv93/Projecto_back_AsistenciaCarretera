@@ -4,6 +4,11 @@
     <%- include('../partials/head'); %>
     <title>Contacto</title>
   </head>
+  
+  <% if (document.cookie == "nombre=admin") { %>
+    <%= include('../partials/footer'); %>
+      <% }  %>
+<% }  %>
   <body>
     <%- include('../partials/navbar'); %>
     <div class="container">
