@@ -5,7 +5,12 @@
     <title>Administrador</title>
   </head>
   <body>
-    <%- include('../partials/navbar'); %>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
         <div>
             <h3 class="d-flex flex-column container-fluid">Administrar solicitudes</h3>
             <div action="">

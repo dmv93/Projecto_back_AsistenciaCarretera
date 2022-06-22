@@ -1,8 +1,9 @@
 const Solicitud = require('../models/Solicitud');
 
 const solicitudes = {
-    solicitudes: (req, res) => {
-        res.render('../views/pages/solicitud');
+    solicitu: async (req, res) => {
+        let guardarDatos = await req.cookies.nombre;
+        res.render('../views/pages/solicitud', {datosGuardados: guardarDatos});
     },
     solicituddone: async (req, res) => {
         const {
@@ -33,11 +34,12 @@ const solicitudes = {
     },
     verSolicitudes: async (req, res) => {
         if (req.cookies.nombre == 'admin') {
+            let guardarDatos = await req.cookies.nombre;
             const solicitudesBBDD = await Solicitud.findAll({
               where: { comprobacion: 'pendiente' },
             });
             //console.log(solicitudesBBDD)
-            res.render('../views/pages/dashAdmin', { solic: solicitudesBBDD });
+            res.render('../views/pages/dashAdmin', { solic: solicitudesBBDD, datosGuardados: guardarDatos });
           } else {
             res.status(403);
             res.render('../views/pages/403');

@@ -5,7 +5,15 @@
     <title>Solicitud</title>
   </head>
   <body>
-    <div><%- include('../partials/navbar'); %></div>
+    <div><% if (datosGuardados == "none") { %>
+      <%- include('../partials/navbar'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
     <div class="container text-center text-primary my-2">
       <h1>Solicitud</h1>
       <div><%- include('../partials/formSolicitud'); %></div>
