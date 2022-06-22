@@ -27,6 +27,7 @@ const auth = {
       //let nombreUsuario = `${usuario.nombre}`;
       res.cookie('nombre', `${usuario.rol}`);
       res.cookie('nombreUsuario', `${usuario.nombre}`);
+
       if (usuario.rol == 'admin') {
         next();
         res.render('../views/pages/index', { datosGuardados: guardarDatos});

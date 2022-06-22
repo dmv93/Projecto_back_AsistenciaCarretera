@@ -32,5 +32,10 @@ const paginas = {
     let guardarDatos = await req.cookies.nombre;
     res.render('../views/pages/gracias', {datosGuardados: guardarDatos});
   },
+  mapa: async (req, res) => {
+    let guardarDatos = await req.cookies.nombre;
+    res.render('../views/pages/mapa', {datosGuardados: guardarDatos});
+
+  },
 };
 module.exports = paginas;

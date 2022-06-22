@@ -2,23 +2,41 @@
 <html lang="es">
   <head>
     <%- include('../partials/head'); %>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Solicitud</title>
   </head>
   <body>
-    <div><% if (datosGuardados == "none") { %>
-      <%- include('../partials/navbar'); %>
-      <% }  %></div>
-    <div><% if (datosGuardados == "admin") { %>
-      <%- include('../partials/navbarAdmin'); %>
-      <% }  %></div>
-    <div><% if (datosGuardados == "user") { %>
-      <%- include('../partials/navbarUser'); %>
-      <% }  %></div>
-    <div class="container text-center text-primary my-2">
-      <h1>Solicitud</h1>
-      <div><%- include('../partials/formSolicitud'); %></div>
-    </div>
 
+<div><% if (datosGuardados == "none") { %>
+  <%- include('../partials/navbar'); %>
+  <% }  %></div>
+<div><% if (datosGuardados == "admin") { %>
+  <%- include('../partials/navbarAdmin'); %>
+  <% }  %></div>
+<div><% if (datosGuardados == "user") { %>
+  <%- include('../partials/navbarUser'); %>
+  <% }  %></div>
+    <div class="container d-flex">
+      <div class="container text-center text-primary my-2 min-vw-50">
+        <h1>Solicitud</h1>
+        <div><%- include('../partials/formSolicitud'); %></div>
+      </div>
+      <div id="map_template" class="container-sm mt-5 min-vw-50"></div>
+
+    </div>
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
     <footer class="bg-primary mt-5">
       <%- include('../partials/footer'); %>
     </footer>

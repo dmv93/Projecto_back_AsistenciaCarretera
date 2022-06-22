@@ -64,6 +64,7 @@ const usuarios = {
       // nombre = req.body.nombreRegistro;
       // res.send(nombre);
       // sequelize.sync();
+      res.render('../views/pages/login')
     } else {
       console.log('Datos invalidos');
     }
