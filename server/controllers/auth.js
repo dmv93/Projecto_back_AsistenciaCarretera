@@ -12,7 +12,7 @@ const auth = {
     const usuario = await Usuario.findOne({
       where: { email: usuarioLogin },
     });
-
+    
     if (!usuario) {
       res.status(404);
       res.render('../views/pages/404');

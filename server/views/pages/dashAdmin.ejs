@@ -17,17 +17,17 @@
                 <div class="d-flex flex-column container-fluid"  >
                 <% for(let key in solic) { %>
                     <div class="d-flex border border-secondary mb-2"  >
-                        <div style="padding: 0.5rem; width: 6%;"><p><%= solic[key].nombre %></p></div>
-                        <div style="padding: 0.5rem; width: 6%;"><p><%= solic[key].apellidos %></p></div>
-                        <div style="padding: 0.5rem; width: 20%;"><p><%= solic[key].email %></p></div>
-                        <div style="padding: 0.5rem; width: 7%;"><p><%= solic[key].nif %></p></div>
-                        <div style="padding: 0.5rem; width: 7%;"><p><%= solic[key].telefono %></p></div>
-                        <div style="padding: 0.5rem; width: 16%;"><p><%= solic[key].direccion %></p></div>
-                        <div style="padding: 0.5rem; width: 7%;"><p><%= solic[key].marca %></p></div>
-                        <div style="padding: 0.5rem; width: 6%;"><p><%= solic[key].modelo %></p></div>
-                        <div style="padding: 0.5rem; width: 13%;"><p><%= solic[key].reparacion %></p></div>
-                        <div style="padding: 0.5rem; width: 6%;"><button type="submit" class="btn btn-success" id="<%= solic[key].id_solicitud %>" name="aceptar">Aceptar</button></div>
-                        <div style="padding: 0.5rem; width: 6%;"><button type="submin" class="btn btn-danger" id="<%= solic[key].id_solicitud %>" name="rechazar" >Rechazar</button></div>
+                        <div style="padding: 0.1rem; width: 6%;"><p><%= solic[key].nombre %></p></div>
+                        <div style="padding: 0.1rem; width: 6%;"><p><%= solic[key].apellidos %></p></div>
+                        <div style="padding: 0.1rem; width: 18%;"><p><%= solic[key].email %></p></div>
+                        <div style="padding: 0.1rem; width: 7%;"><p><%= solic[key].nif %></p></div>
+                        <div style="padding: 0.1rem; width: 7%;"><p><%= solic[key].telefono %></p></div>
+                        <div style="padding: 0.1rem; width: 16%;"><p><%= solic[key].direccion %></p></div>
+                        <div style="padding: 0.1rem; width: 7%;"><p><%= solic[key].marca %></p></div>
+                        <div style="padding: 0.1rem; width: 6%;"><p><%= solic[key].modelo %></p></div>
+                        <div style="padding: 0.1rem; width: 13%;"><p><%= solic[key].reparacion %></p></div>
+                        <div style="padding: 0.1rem; width: 6%;"><button type="submit" class="btn btn-success" id="<%= solic[key].id_solicitud %>" name="aceptar">Aceptar</button></div>
+                        <div style="padding: 0.1rem; width: 6%;"><button type="submin" class="btn btn-danger" id="<%= solic[key].id_solicitud %>" name="rechazar" >Rechazar</button></div>
                         
                     </div>
                 
