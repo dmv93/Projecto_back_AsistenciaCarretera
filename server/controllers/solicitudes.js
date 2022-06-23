@@ -24,7 +24,6 @@ const solicitudes = {
         inputInicidencia,
         inputEmail,
       } = req.body;
-
       var dni = false;
       var numero = inputNif.slice(0, inputNif.length - 1);
       var letra_dni = inputNif[8].toUpperCase();
@@ -58,7 +57,6 @@ const solicitudes = {
       if (letras[resto] == letra_dni) {
         dni = true;
       } //34567765F
-
       if (
         inputNombre.match(/^[a-z ,.'-]+$/i) &&
         inputApellidos.match(/^[a-z ,.'-]+$/i) &&
@@ -81,12 +79,6 @@ const solicitudes = {
           reparacion: inputInicidencia,
           comprobacion: 'pendiente',
         });
-      } else {
-        console.log('Datos invalidos');
-      }
-
-    },  
-}
         let guardarDatos = await req.cookies.nombre;
         res.render('../views/pages/index', { datosGuardados: guardarDatos });
       } else {
@@ -133,7 +125,6 @@ const solicitudes = {
           }
         );
         await res.send('../views/pages/dashAdmin');
-
         console.log('Hay que aceptar la solicitud');
       } else if (req.body.action == 'rechazar') {
         await Solicitud.update(
@@ -154,6 +145,4 @@ const solicitudes = {
     }
   },
 };
-
-
 module.exports = solicitudes;
