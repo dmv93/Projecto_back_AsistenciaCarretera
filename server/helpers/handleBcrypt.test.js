@@ -1,6 +1,11 @@
 const rutaFuncion = require('../helpers/handleBcrypt');
-const contrasena= "qwer1asfasf"
+const contrasena= "qwer"
 const hash = "$2a$10$oIpqkF2n0oHjd8WIPB5LB.O9VF9D8beB7L1COZ4d24Jd/d7eleEuK"
+
+
+
+
+
 
     describe('Comprobar AUTH', () => {
         test('Comprobar si el hash tiene 60 digitos', async () => {
@@ -14,4 +19,3 @@ const hash = "$2a$10$oIpqkF2n0oHjd8WIPB5LB.O9VF9D8beB7L1COZ4d24Jd/d7eleEuK"
           
       });
     });
-
