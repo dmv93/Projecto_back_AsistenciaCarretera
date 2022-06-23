@@ -46,6 +46,8 @@ const auth = {
       } else {
         console.log('contraseña incorrecta');
         console.log('No eres admin');
+        res.status(403);
+      res.render('../views/pages/403');
       }
     } catch (error) {
       console.error(error);

@@ -102,8 +102,10 @@ const usuarios = {
         res.render('../views/pages/login');
       } else {
         console.log('Datos invalidos');
+        res.status(500);
+        res.render('../views/pages/404');
       }
-      res.render('../views/pages/registro');
+      //res.render('../views/pages/registro');
     } catch (error) {
       console.error(error);
       res.status(500);
