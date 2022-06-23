@@ -41,6 +41,8 @@ const usuarios = {
         /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/
       ) &&
       dni
+      && matriculaRegistro.match(/^[0-9]{1,4}[BCDFGHJKLMNPRSTVWXYZ]{3}$/i)
+      
     ) {
       const usuario = await Usuario.create({
         nombre: nombreRegistro,
@@ -67,6 +69,7 @@ const usuarios = {
       res.render('../views/pages/login')
     } else {
       console.log('Datos invalidos');
+
     }
   },
   factura: (req, res) => {

@@ -24,12 +24,9 @@ router.post('/login', urlencodedParser, auth.loginCtrl);
 router.get('/misionVision', misionVision);
 router.get('/contacto', contacto);
 router.get('/coche', coche);
-
 router.get('/solicitud', solicitud);
 router.post('/solicitud', urlencodedParser,solicituddone);
-
 router.get('/mapa', mapa);
-
 router.get('/tarifas', tarifas);
 router.get('/registro', registro);
 router.post('/registro', urlencodedParser, registrodone);
