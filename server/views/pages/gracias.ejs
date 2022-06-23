@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        <% if (datosGuardados=="none" ) { %>
+        <% if (datosGuardados=="none" || datosGuardados== undefined) { %>
             <%- include('../partials/navbar'); %>
                 <% } %>
     </div>

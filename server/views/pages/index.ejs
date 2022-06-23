@@ -3,13 +3,10 @@
   <head>
     
       <%- include('../partials/head'); %>
-
-      
-    
     <title>Asistencia en carretera</title>
   </head>
   <body>
-    <div><% if (datosGuardados == "none") { %>
+    <div><% if (datosGuardados == "none" || datosGuardados == undefined) { %>
       <%- include('../partials/navbar'); %>
       <% }  %></div>
     <div><% if (datosGuardados == "admin") { %>
