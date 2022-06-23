@@ -12,13 +12,7 @@ const solicitudes = require('../controllers/solicitudes');
 
 const router = express.Router();
 
-router.use((req, res, next) => {
-  console.log(req.cookies.nombreUsuario);
-  next();
-});
-const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa } =
-  pagina;
-
+const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa, gracias } = pagina;
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
 const { getGrua, setGrua } = grua;
@@ -30,12 +24,9 @@ router.post('/login', urlencodedParser, auth.loginCtrl);
 router.get('/misionVision', misionVision);
 router.get('/contacto', contacto);
 router.get('/coche', coche);
-
 router.get('/solicitud', solicitud);
-router.post('/solicitud', urlencodedParser, solicituddone);
-
+router.post('/solicitud', urlencodedParser,solicituddone);
 router.get('/mapa', mapa);
-
 router.get('/tarifas', tarifas);
 router.get('/registro', registro);
 router.post('/registro', urlencodedParser, registrodone);
@@ -47,5 +38,6 @@ router.post('/grua', urlencodedParser, setGrua);
 router.get('/dashAdmin', verSolicitudes);
 router.post('/dashboard', modificarEstado);
 router.get('/logOut', auth.logOut);
+router.post('/gracias', gracias)
 
 module.exports = router;

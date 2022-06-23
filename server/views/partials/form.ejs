@@ -1,29 +1,29 @@
 <!-- Formualario para contacto -->
 
-<form>
+<form action="/gracias" method="post">
 <div class="row g-3">
   <div class="col mt-5">
-    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="nombre">
   </div>
   <div class="col mt-5">
-    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" name="apellidos">
   </div>
   
 </div>
 <div class="row g-3">
   <div class="col mt-5">
-    <input type="text" class="form-control" placeholder="Teléfono" aria-label="Telefono">
+    <input type="text" class="form-control" placeholder="Teléfono" aria-label="Telefono" name="telefono">
   </div>
   <div class="col mt-5">
-    <input type="text" class="form-control" placeholder="Correo" aria-label="Correo">
+    <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" name="correo">
   </div>
 
   <div class="form-floating mt-5">
-    <textarea class="form-control" placeholder="Consúltanos" id="floatingTextarea2" style="height: 200px"></textarea>
+    <textarea class="form-control" placeholder="Consúltanos" name="mensaje" id="floatingTextarea2" style="height: 200px"></textarea>
     <label for="floatingTextarea2">Consulta</label>
   </div>
     <div class="col text-center mt-5">
-      <button class="btn btn-primary regular-button"> Enviar </button>
+      <button type="submit" class="btn btn-primary regular-button"> Enviar </button>
     </div>	
   
 </div>

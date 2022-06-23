@@ -81,7 +81,12 @@ const solicitudes = {
           reparacion: inputInicidencia,
           comprobacion: 'pendiente',
         });
+      } else {
+        console.log('Datos invalidos');
+      }
 
+    },  
+}
         let guardarDatos = await req.cookies.nombre;
         res.render('../views/pages/index', { datosGuardados: guardarDatos });
       } else {
@@ -149,5 +154,6 @@ const solicitudes = {
     }
   },
 };
+
 
 module.exports = solicitudes;

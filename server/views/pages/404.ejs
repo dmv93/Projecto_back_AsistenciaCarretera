@@ -5,7 +5,17 @@
     <title>Contacto</title>
   </head>
   <body>
-    <%- include('../partials/navbar'); %>
+    <div><% if (datosGuardados == "none" || datosGuardados == undefined) { %>
+      <%- include('../partials/navbar'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "admin") { %>
+      <%- include('../partials/navbarAdmin'); %>
+      <% }  %></div>
+    <div><% if (datosGuardados == "user") { %>
+      <%- include('../partials/navbarUser'); %>
+      <% }  %></div>
+    <div class="container">
+      <h1>Error 404</h1>
     <div class="container text-center">
       <div class="card mt-5 h-75" style="width: 100%; height: 100%">
         <div class="card-body w-100 h100">
