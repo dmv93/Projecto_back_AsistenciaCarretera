@@ -6,8 +6,14 @@
   </head>
   <body>
     <%- include('../partials/navbar'); %>
-    <div class="container">
-      <h1>Error 404</h1>
+    <div class="container text-center">
+      <div class="card mt-5 h-75" style="width: 100%; height: 100%">
+        <div class="card-body w-100 h100">
+          <h1 class="card-title">Error 404</h1>
+          <p class="card-text text-danger">Recurso no encontrado</p>
+          <a href="/" class="btn btn-primary">Regresar</a>
+        </div>
+      </div>
     </div>
     <footer class="bg-primary mt-5 fixed-bottom container-fluid">
       <%- include('../partials/footer'); %>

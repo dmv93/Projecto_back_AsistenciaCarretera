@@ -12,7 +12,12 @@ const solicitudes = require('../controllers/solicitudes');
 
 const router = express.Router();
 
-const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa } = pagina;
+router.use((req, res, next) => {
+  console.log(req.cookies.nombreUsuario);
+  next();
+});
+const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa } =
+  pagina;
 
 const { registro, registrodone, factura } = usuarios;
 const { conductor, flota } = staff;
@@ -27,7 +32,7 @@ router.get('/contacto', contacto);
 router.get('/coche', coche);
 
 router.get('/solicitud', solicitud);
-router.post('/solicitud', urlencodedParser,solicituddone);
+router.post('/solicitud', urlencodedParser, solicituddone);
 
 router.get('/mapa', mapa);
 

@@ -15,15 +15,19 @@ function crearPDF(dataCallback, endCallback, nombreC, precioP) {
   });
   doc.moveDown();
   doc.moveDown();
-  doc.fontSize(18).fillColor('blue').text(`${nombre}`, {
+  doc.fontSize(18).fillColor('black').text(`${nombre}`, {
     align: 'center',
   });
+  doc.moveDown();
+  doc.moveDown();
   doc.moveDown();
   doc.fontSize(12).fillColor('black').text(`Concepto: ${concepto}`, {
     align: 'left',
   });
   doc.moveDown();
-  doc.fontSize(14).fillColor('red').text(`Precio: ${precio}€ `, {
+  doc.moveDown();
+  doc.moveDown();
+  doc.fontSize(14).fillColor('black').text(`Precio: ${precio}€ `, {
     align: 'center',
   });
   doc.moveDown();
