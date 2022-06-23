@@ -13,7 +13,10 @@ const solicitudes = require('../controllers/solicitudes');
 const router = express.Router();
 
 router.use((req, res, next) => {
-  console.log(req.cookies.nombreUsuario);
+  if (req.cookies.nombreUsuario) {
+    console.log(req.cookies.nombreUsuario);
+  }
+
   next();
 });
 const { home, login, misionVision, contacto, coche, tarifas, solicitud, mapa } =
